@@ -8,7 +8,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.PluginManager;
 
-import com.leontg77.vengefulspirits.Main;
 import com.leontg77.vengefulspirits.listeners.DeathListener;
 
 /**
@@ -20,11 +19,17 @@ import com.leontg77.vengefulspirits.listeners.DeathListener;
  */
 public class VSCommand implements CommandExecutor {
 	private static final String PERMISSION = "vengefulspirits.manage";
-	private static final String PREFIX = "§6VengefulSpirits §8» §f";
+	private static final String PREFIX = "Â§6VengefulSpirits Â§8Â» Â§f";
 	
 	private boolean enabled = false;
 	
 	private DeathListener listener = new DeathListener();
+	
+	private Plugin plugin;
+	
+	public VSCommand(Plugin plugin){
+		this.plugin = plugin;
+	}
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -54,7 +59,7 @@ public class VSCommand implements CommandExecutor {
 			
 			// register the eventhandles for the scenario.
 			PluginManager manager = Bukkit.getPluginManager();
-			manager.registerEvents(listener, Main.plugin);
+			manager.registerEvents(listener, plugin);
 			return true;
 		}
 
