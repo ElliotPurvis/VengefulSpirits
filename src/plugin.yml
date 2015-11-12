@@ -1,0 +1,9 @@
+name: VengefulSpirits
+main: com.leontg77.vengefulspirits.Main
+version: 1.0
+author: LeonTG77
+description: When a player dies, above y 60 a ghast spawns and bellow y 60 a blaze spawns, you can only get their head by killing that mob.
+
+commands:
+    vs:
+        description: Enable or disable the plugin features.
