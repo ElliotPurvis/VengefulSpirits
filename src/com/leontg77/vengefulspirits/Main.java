@@ -11,7 +11,7 @@ import com.leontg77.vengefulspirits.cmds.VSCommand;
  * @author LeonTG77
  */
 public class Main extends JavaPlugin {
-	public static Main plugin;
+	private Plugin plugin;
 
 	@Override
 	public void onDisable() {
@@ -19,8 +19,6 @@ public class Main extends JavaPlugin {
 		PluginDescriptionFile file = getDescription();
 		getLogger().info(file.getName() + " has been disabled.");
 		
-		// set the plugin field to null.
-		plugin = null;
 	}
 	
 	@Override
